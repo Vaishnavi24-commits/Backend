@@ -3,10 +3,9 @@ const Auth = (req,res,next)=>{
     const Access = token==="ABCDEF"?1:0;
 
     if(!Access)
-        res.status(403).send("No permission")
-
-    next()
+        return res.status(403).send("No permission")
 }
+next()
 
 module.exports = {
     Auth,

@@ -2,7 +2,7 @@ const express = require("express")
 const app = express()
 
 
-app.get("/about/:id/:user", (req, res) => {
+app.get("/abou?t", (req, res) => {
   res.send("Hello Miss Vaishnavi")
 })
 

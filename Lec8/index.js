@@ -35,7 +35,7 @@ app.use("/user",(req,res,next)=>{
 })
 app.use("/user",(req,res)=>{
     
-    res.senq("Info about user")
+    res.send("Info about user")
 })
 app.post("/user",(req,res)=>{
     

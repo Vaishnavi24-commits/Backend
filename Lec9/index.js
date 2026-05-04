@@ -18,9 +18,6 @@ const foodItems = [
     {id:13,food:"Fries",category:"veg",price:400},
 ]
 const Addtocart = [];
-
-
-
 app.get("/food",(req,res)=>{
     res.status(200).send(foodItems)
 })
@@ -79,6 +76,34 @@ app.patch("/admin",(req,res)=>{
     // else{
     //     res.status(403).send("No permissionn")
     // }
+})
+app.post("/users/:id",(req,res)=>{
+    
+    const id = parseInt(req.params.id)
+    const foodItem = foodItems.find(item=>item.id===id)
+
+    if(foodItem){
+        Addtocart.push(foodItem)
+        res.status(200).send("Item added successfully")
+    }
+    else{
+        res.send("Item out of stock")
+    }
+}
+)
+app.delete("/users/:id",(req,res)=>{
+    const id = parseInt(req.params.id)
+    const index = Addtocart.findIndex(item=>item.id===id)
+    if(index==-1){
+        res.send("No item in the cart")
+    }
+    else{
+        Addtocart.splice(index,1)
+        res.send("Item removed successfully")
+    }
+})
+app.get("/users",(req,res)=>{
+    res.send(Addtocart)
 })
 app.listen(3000,()=>{
     console.log("I m listening at port 3000");
