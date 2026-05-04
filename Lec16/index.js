@@ -2,6 +2,7 @@ const express = require("express")
 const app= express()
 const main = require("./database.js")
 const User = require("./Models/user.js")
+require("dotenv").config()
 
 app.use(express.json())
 

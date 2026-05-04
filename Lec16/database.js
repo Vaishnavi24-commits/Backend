@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 async function main() {
   //connecting to a database
-  await mongoose.connect("mongodb+srv://MISSVAISHNAVI:Vaishnavi%40240920055@learningmongo.lj45b5u.mongodb.net/Bookstore")
+  await mongoose.connect(process.env.MONGO_URI)
 //making user schema
   // const userschema = new Schema({
   //   name:String,
