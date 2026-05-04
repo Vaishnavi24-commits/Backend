@@ -1,4 +1,4 @@
-//const url = "mongodb+srv://MISSVAISHNAVI:Vaishnavi@240920055@learningmongo.lj45b5u.mongodb.net/"
+
 
 const { MongoClient } = require('mongodb');
 // or as an es module:
